@@ -24,14 +24,14 @@ def test_dark_theme_by_time_and_user_choice():
     dark_theme_enabled_by_user = None - Пользователь не сделал выбор (используется
 переключение по времени системы)
     """
-    global is_dark_theme
+   
     dark_theme_enabled_by_user = True
     current_time = time(hour=16)
 
     if dark_theme_enabled_by_user:
         is_dark_theme = True
 
-    elif not dark_theme_enabled_by_user:
+    elif dark_theme_enabled_by_user is False:
         is_dark_theme = False
 
     elif dark_theme_enabled_by_user is None:
@@ -46,7 +46,6 @@ def test_find_suitable_user():
     """
     Найдите нужного пользователя по условиям в списке пользователей
     """
-    global suitable_users
     users = [
         {"name": "Oleg", "age": 32},
         {"name": "Sergey", "age": 24},
